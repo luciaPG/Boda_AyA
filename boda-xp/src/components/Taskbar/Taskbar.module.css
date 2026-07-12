@@ -1,0 +1,74 @@
+.taskbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 38px;
+  background: linear-gradient(180deg, #3f8cf3 0%, #245edb 8%, #245edb 88%, #1941a5 100%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 4px;
+  border-top: 1px solid #7fb2ff;
+  z-index: 9999;
+}
+
+.startBtn {
+  height: 30px;
+  background: linear-gradient(180deg, #6fdc6f, #2f9c2f 45%, #1c7a1c);
+  color: white;
+  border: 1px solid #14550f;
+  border-radius: 0 12px 12px 0;
+  padding: 0 12px 0 8px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.startFlag { font-size: 16px; font-style: normal; }
+
+.tasks {
+  flex: 1;
+  display: flex;
+  gap: 4px;
+  height: 30px;
+  align-items: center;
+  overflow: hidden;
+}
+
+.task {
+  height: 26px;
+  background: linear-gradient(180deg, #4c8ff0, #2a5fd0);
+  color: white;
+  border: 1px solid #143c96;
+  border-radius: 3px;
+  padding: 0 10px;
+  font-size: 11px;
+  cursor: pointer;
+  max-width: 160px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.task.activeTask {
+  background: linear-gradient(180deg, #1f4fb0, #123a91);
+  box-shadow: inset 0 0 4px #000;
+}
+
+.tray {
+  color: white;
+  padding: 0 12px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  border-left: 1px solid #1c4aa8;
+}

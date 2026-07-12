@@ -1,0 +1,104 @@
+.window {
+  position: absolute;
+  min-width: 320px;
+  min-height: 220px;
+  max-width: calc(100vw - 8px);
+  max-height: calc(100vh - 46px);
+  background: #ece9d8;
+  border: 1px solid #2a54c9;
+  border-radius: 8px 8px 4px 4px;
+  box-shadow: 3px 5px 18px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.window:not(.active) .titleBar {
+  background: linear-gradient(180deg, #7aa8f0 0%, #2f64c7 45%, #234aa0 100%);
+}
+
+.titleBar {
+  height: 28px;
+  background: linear-gradient(180deg, #3f9dff 0%, #0058e6 45%, #1e5ecb 100%);
+  color: white;
+  padding: 0 4px 0 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid #0a2a8a;
+}
+
+.titleLeft { display: flex; align-items: center; gap: 4px; }
+.icon { font-size: 14px; }
+
+.buttons { display: flex; gap: 2px; }
+
+.btn {
+  width: 20px;
+  height: 19px;
+  background: linear-gradient(180deg, #5fb6ff, #1c6fe0);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px;
+  line-height: 1;
+}
+.btn.close { background: linear-gradient(180deg, #ff8f7a, #d1301a); }
+
+.menuBar {
+  background: #ece9d8;
+  font-size: 11.5px;
+  padding: 3px 8px;
+  color: #333;
+  border-bottom: 1px solid #c8c4b4;
+  display: flex;
+  gap: 14px;
+}
+.menuBar span { cursor: default; padding: 1px 4px; }
+
+.content {
+  flex: 1;
+  overflow: auto;
+  background: white;
+  padding: 14px 16px;
+  font-size: 12.5px;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+
+.statusBar {
+  background: #ece9d8;
+  border-top: 1px solid #fff;
+  padding: 3px 10px;
+  font-size: 11px;
+  color: #444;
+}
+
+.resizeHandle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 14px;
+  height: 14px;
+  cursor: nwse-resize;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .window {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: calc(100vh - 36px) !important;
+    border-radius: 0;
+  }
+  .titleBar { cursor: default; }
+  .resizeHandle { display: none; }
+}

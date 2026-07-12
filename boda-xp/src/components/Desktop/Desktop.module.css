@@ -1,0 +1,65 @@
+.desktop {
+  position: absolute;
+  inset: 0 0 38px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 18px 14px;
+  align-items: flex-start;
+  padding: 14px;
+  max-width: 240px;
+}
+
+.icon {
+  width: 76px;
+  text-align: center;
+  cursor: default;
+  padding: 4px;
+  border-radius: 3px;
+  user-select: none;
+}
+
+.icon:hover .emoji,
+.selected .emoji {
+  filter: brightness(1.15);
+}
+
+.selected {
+  background: rgba(60, 110, 220, 0.35);
+  outline: 1px dotted #dfe9ff;
+}
+
+.emoji {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.35);
+}
+
+.label {
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.25;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+  white-space: pre-line;
+}
+
+.icon:nth-child(1) .emoji { background: linear-gradient(135deg, #ffe28a, #ffb347); border: 1px solid #b3760f; }
+.icon:nth-child(2) .emoji { background: linear-gradient(135deg, #fff, #dfe9ff); border: 1px solid #6f8fce; }
+.icon:nth-child(3) .emoji { background: linear-gradient(135deg, #fff, #dfe9ff); border: 1px solid #6f8fce; }
+.icon:nth-child(4) .emoji { background: linear-gradient(135deg, #ffe27a, #ffc93f); border: 1px solid #b8860b; }
+.icon:nth-child(5) .emoji { background: linear-gradient(135deg, #c9a6ff, #8a5cf7); border: 1px solid #5b30b0; }
+
+@media (max-width: 768px) {
+  .desktop {
+    max-width: none;
+    width: 100%;
+    gap: 12px;
+  }
+}
